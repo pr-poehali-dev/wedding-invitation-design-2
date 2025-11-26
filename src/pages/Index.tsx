@@ -182,7 +182,7 @@ const Index = () => {
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary drop-shadow">14:00</div>
+                  <div className="text-2xl font-bold text-primary drop-shadow">12:50</div>
                 </div>
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
