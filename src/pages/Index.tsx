@@ -72,38 +72,29 @@ const Index = () => {
       content: (
         <div className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20"
-            style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/5608e346-88f4-4056-bee7-c936c276531a/files/9e47b034-d70e-4eec-9387-ce0ae62ced5c.jpg)' }}
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{ backgroundImage: 'url(https://cdn.poehali.dev/projects/5608e346-88f4-4056-bee7-c936c276531a/files/17111e80-203c-40b6-b35e-7afb015864a3.jpg)' }}
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
           <div className="relative z-10 text-center animate-fade-in">
             <div className="mb-8">
-              <Icon name="Heart" size={64} className="mx-auto text-primary animate-float" />
+              <Icon name="Heart" size={64} className="mx-auto text-primary animate-float drop-shadow-lg" />
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6">
+            <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6 drop-shadow-2xl">
               Вячеслав & Сабрина
             </h1>
-            <p className="text-2xl md:text-3xl text-foreground/80 mb-8">
+            <p className="text-2xl md:text-3xl text-foreground/90 mb-8 drop-shadow-lg">
               Приглашаем вас разделить с нами<br />самый счастливый день нашей жизни
             </p>
-            <div className="text-xl md:text-2xl font-semibold text-primary mb-12">
+            <div className="text-xl md:text-2xl font-semibold text-primary mb-12 drop-shadow-lg">
               19 июня 2026
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 inline-block">
-              <div className="text-lg text-foreground/70 mb-2">До торжества осталось</div>
-              <div className="text-5xl font-bold text-primary">{daysUntil}</div>
-              <div className="text-lg text-foreground/70 mt-2">
+            <div className="bg-card/80 backdrop-blur-md rounded-lg p-6 inline-block border border-primary/20 shadow-2xl">
+              <div className="text-lg text-muted-foreground mb-2">До торжества осталось</div>
+              <div className="text-5xl font-bold text-primary drop-shadow-lg">{daysUntil}</div>
+              <div className="text-lg text-muted-foreground mt-2">
                 {daysUntil === 1 ? 'день' : daysUntil < 5 ? 'дня' : 'дней'}
               </div>
-            </div>
-            <div className="mt-12">
-              <Button 
-                size="lg" 
-                onClick={() => setCurrentSection(1)}
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg"
-              >
-                Открыть приглашение
-                <Icon name="ChevronDown" size={20} className="ml-2" />
-              </Button>
             </div>
           </div>
         </div>
@@ -113,19 +104,19 @@ const Index = () => {
       id: 'story',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-4xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-8">
+          <Card className="max-w-4xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-8 drop-shadow-lg">
               Наша История
             </h2>
             <div className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg aspect-square flex items-center justify-center overflow-hidden group">
+                <div className="relative bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg aspect-square flex items-center justify-center overflow-hidden group border border-primary/30">
                   {storyImages[0] ? (
                     <img src={storyImages[0]} alt="История 1" className="w-full h-full object-cover" />
                   ) : (
-                    <Icon name="Image" size={64} className="text-primary/40" />
+                    <Icon name="Image" size={64} className="text-primary/60" />
                   )}
-                  <label className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                  <label className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                     <div className="text-white text-center">
                       <Icon name="Upload" size={32} className="mx-auto mb-2" />
                       <span className="text-sm">Загрузить фото</span>
@@ -139,7 +130,7 @@ const Index = () => {
                   </label>
                 </div>
                 <div>
-                  <p className="text-lg leading-relaxed text-foreground/80">
+                  <p className="text-lg leading-relaxed text-foreground/90">
                     Наши пути пересеклись, и с того момента наша жизнь наполнилась любовью, 
                     смехом и незабываемыми моментами. Каждый день рядом друг с другом — это 
                     новая глава нашей прекрасной истории.
@@ -148,19 +139,19 @@ const Index = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div className="order-2 md:order-1">
-                  <p className="text-lg leading-relaxed text-foreground/80">
+                  <p className="text-lg leading-relaxed text-foreground/90">
                     Мы прошли через многое вместе, поддерживая друг друга в каждом шаге. 
                     И теперь мы готовы начать новую главу нашей жизни, связав наши судьбы 
                     навсегда.
                   </p>
                 </div>
-                <div className="order-1 md:order-2 relative bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg aspect-square flex items-center justify-center overflow-hidden group">
+                <div className="order-1 md:order-2 relative bg-gradient-to-br from-primary/20 to-primary/10 rounded-lg aspect-square flex items-center justify-center overflow-hidden group border border-primary/30">
                   {storyImages[1] ? (
                     <img src={storyImages[1]} alt="История 2" className="w-full h-full object-cover" />
                   ) : (
-                    <Icon name="Image" size={64} className="text-primary/40" />
+                    <Icon name="Image" size={64} className="text-primary/60" />
                   )}
-                  <label className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+                  <label className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
                     <div className="text-white text-center">
                       <Icon name="Upload" size={32} className="mx-auto mb-2" />
                       <span className="text-sm">Загрузить фото</span>
@@ -175,16 +166,6 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-12 text-center">
-              <Button 
-                size="lg"
-                onClick={() => setCurrentSection(2)}
-                className="bg-primary hover:bg-primary/90 text-white"
-              >
-                Далее
-                <Icon name="ArrowRight" size={20} className="ml-2" />
-              </Button>
-            </div>
           </Card>
         </div>
       )
@@ -193,80 +174,70 @@ const Index = () => {
       id: 'timeline',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-3xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-12">
+          <Card className="max-w-3xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-12 drop-shadow-lg">
               Программа дня
             </h2>
             <div className="space-y-6">
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary">14:00</div>
+                  <div className="text-2xl font-bold text-primary drop-shadow">14:00</div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
                     <Icon name="Users" size={24} className="text-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-1">Сбор гостей</h3>
-                  <p className="text-foreground/70">Встречаемся и готовимся к церемонии</p>
+                  <p className="text-muted-foreground">Встречаемся и готовимся к церемонии</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary">15:00</div>
+                  <div className="text-2xl font-bold text-primary drop-shadow">15:00</div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
                     <Icon name="Heart" size={24} className="text-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-1">Торжественная церемония</h3>
-                  <p className="text-foreground/70">Официальная регистрация брака</p>
+                  <p className="text-muted-foreground">Официальная регистрация брака</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary">17:00</div>
+                  <div className="text-2xl font-bold text-primary drop-shadow">17:00</div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
                     <Icon name="Utensils" size={24} className="text-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-1">Начало банкета</h3>
-                  <p className="text-foreground/70">Праздничный ужин и веселье</p>
+                  <p className="text-muted-foreground">Праздничный ужин и веселье</p>
                 </div>
               </div>
 
               <div className="flex gap-4 items-start">
                 <div className="flex-shrink-0 w-24 text-right">
-                  <div className="text-2xl font-bold text-primary">23:00</div>
+                  <div className="text-2xl font-bold text-primary drop-shadow">23:00</div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40">
                     <Icon name="Sparkles" size={24} className="text-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold mb-1">Окончание торжества</h3>
-                  <p className="text-foreground/70">Прощание и благодарность</p>
+                  <p className="text-muted-foreground">Прощание и благодарность</p>
                 </div>
               </div>
-            </div>
-            <div className="mt-12 text-center">
-              <Button 
-                size="lg"
-                onClick={() => setCurrentSection(3)}
-                className="bg-primary hover:bg-primary/90 text-white"
-              >
-                Далее
-                <Icon name="ArrowRight" size={20} className="ml-2" />
-              </Button>
             </div>
           </Card>
         </div>
@@ -277,16 +248,16 @@ const Index = () => {
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
           <div className="max-w-5xl w-full space-y-8 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-12 drop-shadow-lg">
               Место проведения
             </h2>
             
-            <Card className="p-6 md:p-8 bg-white/95 backdrop-blur">
+            <Card className="p-6 md:p-8 bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
               <div className="flex items-start gap-3 mb-4">
                 <Icon name="MapPin" size={28} className="text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-2xl font-bold text-primary mb-2">Регистрация брака</h3>
-                  <p className="text-lg text-foreground/80 mb-4">г. Воронеж, ул. Олеко Дундича, 23</p>
+                  <p className="text-lg text-foreground/90 mb-4">г. Воронеж, ул. Олеко Дундича, 23</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -308,12 +279,12 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-6 md:p-8 bg-white/95 backdrop-blur">
+            <Card className="p-6 md:p-8 bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
               <div className="flex items-start gap-3 mb-4">
                 <Icon name="Utensils" size={28} className="text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-2xl font-bold text-primary mb-2">Банкет</h3>
-                  <p className="text-lg text-foreground/80 mb-4">г. Воронеж, наб. Максима Горького, 109/1</p>
+                  <p className="text-lg text-foreground/90 mb-4">г. Воронеж, наб. Максима Горького, 109/1</p>
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -353,13 +324,13 @@ const Index = () => {
       id: 'calendar',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-8">
+          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-8 drop-shadow-lg">
               Июнь 2026
             </h2>
             <div className="grid grid-cols-7 gap-2 mb-8">
               {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].map((day) => (
-                <div key={day} className="text-center font-semibold text-foreground/70 py-2">
+                <div key={day} className="text-center font-semibold text-muted-foreground py-2">
                   {day}
                 </div>
               ))}
@@ -368,15 +339,15 @@ const Index = () => {
                   {day === 19 ? (
                     <div className="relative">
                       <Icon name="Heart" size={48} className="text-primary absolute inset-0 -m-3" />
-                      <span className="relative z-10 text-xl font-bold text-white">{day}</span>
+                      <span className="relative z-10 text-xl font-bold text-background">{day}</span>
                     </div>
                   ) : (
-                    <span className="text-lg text-foreground/70">{day}</span>
+                    <span className="text-lg text-muted-foreground">{day}</span>
                   )}
                 </div>
               ))}
             </div>
-            <div className="text-center text-xl text-foreground/80 mb-8">
+            <div className="text-center text-xl text-foreground/90 mb-8">
               Пятница, 19 июня 2026
             </div>
             <div className="text-center">
@@ -397,14 +368,14 @@ const Index = () => {
       id: 'message',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur">
+          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
             <div className="text-center mb-8">
               <Icon name="Heart" size={64} className="mx-auto text-primary mb-6 animate-float" />
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 drop-shadow-lg">
                 Дорогие гости!
               </h2>
             </div>
-            <p className="text-lg leading-relaxed text-center text-foreground/80 mb-8">
+            <p className="text-lg leading-relaxed text-center text-foreground/90 mb-8">
               Для нас очень важно, чтобы в этот особенный день рядом были самые близкие 
               и дорогие нам люди. Ваше присутствие сделает наш праздник по-настоящему 
               незабываемым. Мы будем невероятно рады разделить с вами радость и счастье 
@@ -432,11 +403,11 @@ const Index = () => {
       id: 'rsvp',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8">
+          <Card className="max-w-xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-8 drop-shadow-lg">
               Подтверждение присутствия
             </h2>
-            <p className="text-center text-foreground/80 mb-8">
+            <p className="text-center text-foreground/90 mb-8">
               Пожалуйста, подтвердите своё присутствие на нашей свадьбе
             </p>
             <RadioGroup value={attendance} onValueChange={setAttendance} className="space-y-4 mb-8">
@@ -447,12 +418,12 @@ const Index = () => {
                 </Label>
                 <Icon name="Check" size={24} className="text-primary" />
               </div>
-              <div className="flex items-center space-x-3 border-2 border-primary/20 rounded-lg p-4 hover:border-primary/50 transition-colors cursor-pointer">
+              <div className="flex items-center space-x-3 border-2 border-primary/30 rounded-lg p-4 hover:border-primary/60 transition-colors cursor-pointer bg-secondary/50">
                 <RadioGroupItem value="no" id="no" />
                 <Label htmlFor="no" className="flex-1 cursor-pointer text-lg">
                   К сожалению, не смогу присутствовать
                 </Label>
-                <Icon name="X" size={24} className="text-foreground/40" />
+                <Icon name="X" size={24} className="text-muted-foreground" />
               </div>
             </RadioGroup>
             <div className="text-center">
@@ -474,12 +445,12 @@ const Index = () => {
       id: 'thankyou',
       content: (
         <div className="min-h-screen flex items-center justify-center px-4 py-16">
-          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-white/95 backdrop-blur text-center">
-            <Icon name="Heart" size={80} className="mx-auto text-primary mb-8 animate-float" />
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
+          <Card className="max-w-2xl w-full p-8 md:p-12 animate-scale-in bg-card/95 backdrop-blur border-primary/20 shadow-2xl text-center">
+            <Icon name="Heart" size={80} className="mx-auto text-primary mb-8 animate-float drop-shadow-lg" />
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 drop-shadow-lg">
               Спасибо!
             </h2>
-            <p className="text-xl leading-relaxed text-foreground/80 mb-8">
+            <p className="text-xl leading-relaxed text-foreground/90 mb-8">
               {attendance === 'yes' 
                 ? 'Мы невероятно рады, что вы разделите с нами этот особенный день! До встречи на нашей свадьбе!'
                 : 'Благодарим за ответ! Мы будем скучать по вам в этот особенный день.'}
