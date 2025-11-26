@@ -32,6 +32,19 @@ const Index = () => {
     }
   }, [envelopeOpened, audioPlayed]);
 
+  useEffect(() => {
+    if (currentSection === 6 || currentSection === 7) return;
+
+    const autoScrollTimer = setTimeout(() => {
+      if (currentSection < 5) {
+        setCurrentSection(prev => prev + 1);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 8000);
+
+    return () => clearTimeout(autoScrollTimer);
+  }, [currentSection]);
+
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const file = e.target.files?.[0];
     if (file) {
