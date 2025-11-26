@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { toast } from 'sonner';
+import Particles from '@/components/Particles';
 
 const Index = () => {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
@@ -485,8 +486,11 @@ const Index = () => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-background via-secondary to-background">
-      {sections[currentSection].content}
+    <div className="bg-gradient-to-br from-background via-secondary to-background relative">
+      <Particles />
+      <div className="relative z-10">
+        {sections[currentSection].content}
+      </div>
     </div>
   );
 };
